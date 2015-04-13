@@ -6,6 +6,7 @@ Este proyecto utiiza Vagrnat para montar y desplegar una plataforma válida para
 * FPM para PHP
 * Memcache, utilizable como gestor de sesiones para PMP
 * MongoDB o MySQL como motores de datos (opcional y configurable)
+* XDEBUG instalado y configurado, para utilizar con netbeans
 
 ## Requisitos
 
