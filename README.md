@@ -8,6 +8,11 @@ Este proyecto utiiza Vagrnat para montar y desplegar una plataforma válida para
 * MongoDB o MySQL como motores de datos (opcional y configurable)
 * XDEBUG instalado y configurado, para utilizar con netbeans
 
+Es recomendable comenzar haciendo "fork" de este proyecto y utilizarlo como base para nuestro proyecto silex / symfony. El código fuente irá en la carpeta src/web del repositorio.
+La ventaja de esta forma de trabajo es que no tenemos que preocuperanos por configurar e instalar absolutamente nada más allá del software base (git, vagrant, virtualbox). El resto va incluido en la máquina virtual.
+
+Si trabajamos con varios proyectos diferentes, podemos arrancar o parar las máqiunas virtuales de forma individual, o podemos "levantar" varias máquinas virtuales de varios proyectos distintos despues de cambiar la IP de cada proyecto (en el archivo "Vagrantfile"); cada proyecto distinto tendrá su software base distinto. Incluso podemos arrancar la máquina virtual (vagrnat up), hacer el trabajo de desarrollo que sea necesario, versionar con un "commit" y luego destruir la máquina virtual una vez terminado el trabajo o la intervención.
+
 ## Requisitos
 
 Para que la plataforma funcione necesitas el siguiente software:
@@ -34,7 +39,6 @@ Pueden contener "true" o "false". Con ellos indicamos si queremos o no instalar 
 ### environment.dev.yml y environment.staging.yml
 
 Contienen dos variables con las que se establece el DNS del proyecto, para cada uno de los entornos de la plataforma. Sin entrar en mucho detalle, el fichero es "environment.dev.php" para nuestro entorno de desarrollo, y contienen el texto "local"; así nuestro proyecto se atenderá en el DNS "project.local" (aunque también responderá a la IP 10.12.12.2)
-
 
 ## Funcionamiento
 
