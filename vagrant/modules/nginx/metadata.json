@@ -1,0 +1,15 @@
+{
+  "name": "example42-nginx",
+  "version": "2.3.1",
+  "author": "Alessandro Franceschi - Maintainer Javier Bertoli",
+  "summary": "Puppet module for nginx",
+  "license": "Apache2",
+  "source": "https://github.com/netmanagers/puppet-nginx",
+  "project_page": "http://www.example42.com",
+  "issues_url": "https://github.com/netmanagers/puppet-nginx/issues",
+  "description": "This module installs and manages nginx. Check README.rdoc for details. Puppi is required for some common functions: you can install them without using the whole module. Monitor and firewall dependencies are needed only if the relevant features are enabled",
+  "dependencies": [
+    {"name":"example42/puppi","version_requirement":">=2.0.0"},
+    {"name":"puppetlabs/concat","version_requirement":">=1.0.0"}
+  ]
+}

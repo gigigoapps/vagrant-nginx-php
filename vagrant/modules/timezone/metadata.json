@@ -1,0 +1,23 @@
+{
+  "name": "example42-timezone",
+  "version": "2.0.11",
+  "author": "Alessandro Franceschi",
+  "summary": "Puppet module to manage timezones",
+  "license": "Apache2",
+  "source": "https://github.com/example42/puppet-timezone",
+  "project_page": "http://www.example42.com",
+  "issues_url": "https://github.com/example42/puppet-timezone/issues",
+  "description": "This module manages the timezone on different OS",
+  "types": [
+  
+  ],
+  "checksums": {
+  },
+  "dependencies": [
+    {
+      "name": "example42/puppi",
+      "version_requirement": ">=2.0.0"
+    },
+    {"name":"example42/puppi","version_requirement":">=2.0.0"}
+  ]
+}

@@ -1,0 +1,34 @@
+.DS_Store
+
+# /
+/nbproject
+*.sublime-project
+*.sublime-workspace
+*~
+
+# /src/
+/src/TextMate2
+/src/.buildpath
+/src/.project
+/src/.settings
+/src/nbproject
+/src/.idea
+/src/.tm_properties
+/src/bin/*
+/src/behat.yml
+!/src/bin/behat
+
+# Vagrant local VM
+/vagrant/.vagrant
+
+# Testing
+/src/jm_behat_report.html
+/src/scripts/*.jar
+!/src/behat.yml
+
+# web
+/src/web/static/*
+/src/web/uploads/*
+
+!.gitkeep
+!.gitignore

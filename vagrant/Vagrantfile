@@ -1,0 +1,45 @@
+# Gigigo :: Infrastructure base for PHP project with nginx + mongodb
+vm_env = 'dev'
+dns_suffix = "local"
+
+Vagrant.configure('2') do |config|
+
+    # Disable auto update of virtualbox guest additions
+    if Vagrant.has_plugin?("vagrant-vbguest")
+        config.vbguest.auto_update = false
+    end
+
+    # Project
+    config.vm.define :project do |node_conf|
+        node_conf.vm.box = 'puppetlabs/ubuntu-14.04-64-puppet'
+        node_conf.vm.network :private_network, ip: "10.12.12.2"
+        node_conf.vm.hostname = "project.#{dns_suffix}"
+
+        # Shared folders
+        node_conf.vm.synced_folder "../src/", "/var/www/project/src", owner: "www-data", group: "www-data"
+
+        node_conf.vm.provider 'virtualbox' do |v|
+            v.customize ['modifyvm', :id, '--groups', '/vagrant']
+            v.customize ['modifyvm', :id, '--name', 'project']
+            v.customize ['modifyvm', :id, '--cpus', '1']
+            v.customize ['modifyvm', :id, '--memory', 1024]
+            v.customize ['modifyvm', :id, '--ioapic', 'off']
+            v.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+            v.customize ['modifyvm', :id, '--nictype1', 'virtio']
+            v.customize ['modifyvm', :id, '--nictype2', 'virtio']
+        end
+
+        # Update package list
+        node_conf.vm.provision :shell, :inline => 'if [[ ! -f /apt-get-run ]]; then apt-get update && sudo touch /apt-get-run; fi'
+
+        # Puppet provision
+        node_conf.vm.provision :puppet do |puppet|
+            puppet.facter               = { 'vm_env' => vm_env, 'vm_type' => 'vagrant' }
+            puppet.hiera_config_path    = 'manifests/hiera.yaml'
+            puppet.manifests_path       = 'manifests'
+            puppet.manifest_file        = 'default.pp'
+            puppet.module_path          = 'modules'
+            puppet.options              = '--verbose'
+        end
+    end
+end

@@ -1,0 +1,10 @@
+---
+:hierarchy:
+    - "%{::hostname}"
+    - "%{::vm_type}"
+    - "environment.%{::vm_env}"
+    - common
+:backends:
+    - yaml
+:yaml:
+    :datadir: '%{settings::manifestdir}/hieradata'

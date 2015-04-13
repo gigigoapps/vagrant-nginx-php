@@ -1,0 +1,21 @@
+{
+  "LICENSE": "a300b604c66de62cf6e923cca89c9d83",
+  "Modulefile": "f71239575936ae58b25df7e30feb4841",
+  "README.md": "0e569e37a87da1283b32b7746a96beba",
+  "Rakefile": "e90d68823ff237c89224eb139f8926ad",
+  "manifests/init.pp": "e5fc45f3f0f354759086611475701d6a",
+  "manifests/params.pp": "2092edca0b353c7bcda1b6f0db6ad96e",
+  "metadata.json": "f2086b831c0d56c627d3a90babe08791",
+  "templates/timezone-CentOS": "c3bb841f7d3a02d05c28c9b110fbf045",
+  "templates/timezone-Debian": "177a5234f8fdb29d5dbf997d002f2bc9",
+  "templates/timezone-Fedora": "c3bb841f7d3a02d05c28c9b110fbf045",
+  "templates/timezone-FreeBSD": "920b25c769ecad69a521a1f4237ff6b7",
+  "templates/timezone-OpenBSD": "920b25c769ecad69a521a1f4237ff6b7",
+  "templates/timezone-OpenSuSE": "645a5016f35760d95d778d9064a76ab6",
+  "templates/timezone-OracleLinux": "c3bb841f7d3a02d05c28c9b110fbf045",
+  "templates/timezone-RedHat": "c3bb841f7d3a02d05c28c9b110fbf045",
+  "templates/timezone-Scientific": "c3bb841f7d3a02d05c28c9b110fbf045",
+  "templates/timezone-Solaris": "cdb481294b2ff9a188fc811f72399514",
+  "templates/timezone-SuSE": "f95e143ce1636681357cbf5b6875d31d",
+  "templates/timezone-Ubuntu": "177a5234f8fdb29d5dbf997d002f2bc9"
+}
